@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* thumnails_01 */
+        #root div.thumnails_01 {
+            width: 735px;
+            margin: 0 auto;
+        }
+
+        #root div.thumnails_01 ul {
+            overflow: hidden;
+        }
+
+        #root div.thumnails_01 ul li {
+            width: 107px;
+            list-style: none;
+            float: left;
+            text-align: center;
+            margin: 20px;
+        }
+
+        #root div.thumnails_01 ul li a {
+            text-decoration: none;
+            color: #545454;
+        }
+        /* thumnails_01 END */
+
+        /* thumnails_02 START */
+        #root div.thumnails_02 {
+            width: 735px;
+            margin: 0 auto;
+        }
+
+        #root div.thumnails_02 ul {
+            overflow: hidden;
+        }
+
+        #root div.thumnails_02 ul li {
+            width: 205px;
+            list-style: none;
+            float: left;
+            text-align: center;
+            margin: 20px;
+        }
+
+        #root div.thumnails_02 ul li a {
+            text-decoration: none;
+            color: #545454;
+        }
+        /* thumnails_02 END */
+
+    </style>
+
+</head>
+<body>
+    <div id="root">
+        
+    </div>
+</body>
+</html>
+
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<script type="text/babel">
+
+    const DivImg = (props) => {
+        return(
+            <div>
+                <div><a href={props.img_url}><img src={props.img_src} /></a></div>
+                <div><a href={props.txt_url}>{props.txt}</a></div>
+            </div>
+        );
+    }
+
+    const Li = (props) => {
+        return(
+            <li>
+                <DivImg img_url={props.img_url} img_src={props.img_src} txt_url={props.txt_url} txt={props.txt} />
+            </li>
+        );
+    }
+
+    const Ul = () => {
+        return (
+            <>
+                <ul>
+                    <Li img_url="#none" img_src="./imgs/img01.png" txt_url="#none" txt="Lorem ipsum dolor"/>
+                    <Li img_url="#none" img_src="./imgs/img02.png" txt_url="#none" txt="Lorem ipsum dolor"/>
+                    <Li img_url="#none" img_src="./imgs/img03.png" txt_url="#none" txt="Lorem ipsum dolor"/>
+                    <Li img_url="#none" img_src="./imgs/img04.png" txt_url="#none" txt="Lorem ipsum dolor"/>
+                    <Li img_url="#none" img_src="./imgs/img05.png" txt_url="#none" txt="Lorem ipsum dolor"/>
+                </ul>
+                <ul>
+                    <Li img_url="#none" img_src="./imgs/img06.png" txt_url="#none" txt="Lorem ipsum dolor"/>
+                    <Li img_url="#none" img_src="./imgs/img07.png" txt_url="#none" txt="Lorem ipsum dolor"/>
+                    <Li img_url="#none" img_src="./imgs/img08.png" txt_url="#none" txt="Lorem ipsum dolor"/>
+                    <Li img_url="#none" img_src="./imgs/img09.png" txt_url="#none" txt="Lorem ipsum dolor"/>
+                    <Li img_url="#none" img_src="./imgs/img10.png" txt_url="#none" txt="Lorem ipsum dolor"/>
+                </ul>
+            </>
+        );
+    }
+
+    const UlLarge = () => {
+        return(
+            <ul>
+                <Li img_url="#none" img_src="./imgs/img11.png" txt_url="#none" txt="Lorem ipsum dolor"/>
+                <Li img_url="#none" img_src="./imgs/img12.png" txt_url="#none" txt="Lorem ipsum dolor"/>
+                <Li img_url="#none" img_src="./imgs/img13.png" txt_url="#none" txt="Lorem ipsum dolor"/>
+            </ul>
+        );
+    }
+
+    const DivThums = () => {
+        return(
+            <>
+                <div className="thumnails_01">
+                    <Ul />
+                </div>
+                <div className="thumnails_02">
+                    <UlLarge />
+                </div>
+            </>
+        );
+    }
+
+    const el = <DivThums />;
+    ReactDOM.render(el, document.getElementById('root'));
+    
+</script>

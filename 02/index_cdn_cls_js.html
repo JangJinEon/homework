@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* thumnails_01 */
+        #root div.thumnails_01 {
+            width: 735px;
+            margin: 0 auto;
+        }
+
+        #root div.thumnails_01 ul {
+            overflow: hidden;
+        }
+
+        #root div.thumnails_01 ul li {
+            width: 107px;
+            list-style: none;
+            float: left;
+            text-align: center;
+            margin: 20px;
+        }
+
+        #root div.thumnails_01 ul li a {
+            text-decoration: none;
+            color: #545454;
+        }
+        /* thumnails_01 END */
+
+        /* thumnails_02 START */
+        #root div.thumnails_02 {
+            width: 735px;
+            margin: 0 auto;
+        }
+
+        #root div.thumnails_02 ul {
+            overflow: hidden;
+        }
+
+        #root div.thumnails_02 ul li {
+            width: 205px;
+            list-style: none;
+            float: left;
+            text-align: center;
+            margin: 20px;
+        }
+
+        #root div.thumnails_02 ul li a {
+            text-decoration: none;
+            color: #545454;
+        }
+        /* thumnails_02 END */
+
+    </style>
+
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
+
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<script type="text/babel">
+
+    class DivImg extends React.Component {
+        render() {
+            return(
+                React.createElement(
+                    'div',
+                    {},
+                    [
+                        React.createElement(
+                            'div',
+                            null,
+                            React.createElement(
+                                'a',
+                                {
+                                    href: this.props.img_url,
+                                },
+                                React.createElement(
+                                    'img', 
+                                    {
+                                        src: this.props.img_src,
+                                    },
+                                    null
+                                )
+                            )
+                        ),
+                        React.createElement(
+                            'div',
+                            null,
+                            React.createElement(
+                                'a',
+                                {
+                                    href: this.props.txt_url,
+                                },
+                                this.props.txt
+                            )
+                        )
+                    ]
+                )
+            );
+        }
+    }
+
+    class Li extends React.Component {
+        render() {
+            return(
+                React.createElement(
+                    'li',
+                    {},
+                    React.createElement(
+                        DivImg,
+                        {
+                            img_url: this.props.img_url,
+                            img_src: this.props.img_src,
+                            txt_url: this.props.txt_url,
+                            txt: this.props.txt,
+                        },
+                        null
+                    )
+                )
+            );
+        }
+    }
+
+    class Ul extends React.Component {
+        render() {
+            return(
+                [
+                    React.createElement(
+                        'ul',
+                        null,
+                        [
+                            React.createElement(
+                                Li,
+                                {
+                                    img_url: '#none',
+                                    img_src: './imgs/img01.png',
+                                    txt_url: '#none',
+                                    txt: 'Lorem ipsum dolor',
+                                },
+                                null
+                            ),
+                            React.createElement(
+                                Li,
+                                {
+                                    img_url: '#none',
+                                    img_src: './imgs/img02.png',
+                                    txt_url: '#none',
+                                    txt: 'Lorem ipsum dolor',
+                                },
+                                null
+                            ),
+                            React.createElement(
+                                Li,
+                                {
+                                    img_url: '#none',
+                                    img_src: './imgs/img03.png',
+                                    txt_url: '#none',
+                                    txt: 'Lorem ipsum dolor',
+                                },
+                                null
+                            ),
+                            React.createElement(
+                                Li,
+                                {
+                                    img_url: '#none',
+                                    img_src: './imgs/img04.png',
+                                    txt_url: '#none',
+                                    txt: 'Lorem ipsum dolor',
+                                },
+                                null
+                            ),
+                            React.createElement(
+                                Li,
+                                {
+                                    img_url: '#none',
+                                    img_src: './imgs/img05.png',
+                                    txt_url: '#none',
+                                    txt: 'Lorem ipsum dolor',
+                                },
+                                null
+                            )
+                        ]
+                    ), 
+                    React.createElement(
+                        'ul',
+                        null,
+                        [
+                            React.createElement(
+                                Li,
+                                {
+                                    img_url: '#none',
+                                    img_src: './imgs/img06.png',
+                                    txt_url: '#none',
+                                    txt: 'Lorem ipsum dolor',
+                                },
+                                null
+                            ),
+                            React.createElement(
+                                Li,
+                                {
+                                    img_url: '#none',
+                                    img_src: './imgs/img07.png',
+                                    txt_url: '#none',
+                                    txt: 'Lorem ipsum dolor',
+                                },
+                                null
+                            ),
+                            React.createElement(
+                                Li,
+                                {
+                                    img_url: '#none',
+                                    img_src: './imgs/img08.png',
+                                    txt_url: '#none',
+                                    txt: 'Lorem ipsum dolor',
+                                },
+                                null
+                            ),
+                            React.createElement(
+                                Li,
+                                {
+                                    img_url: '#none',
+                                    img_src: './imgs/img09.png',
+                                    txt_url: '#none',
+                                    txt: 'Lorem ipsum dolor',
+                                },
+                                null
+                            ),
+                            React.createElement(
+                                Li,
+                                {
+                                    img_url: '#none',
+                                    img_src: './imgs/img10.png',
+                                    txt_url: '#none',
+                                    txt: 'Lorem ipsum dolor',
+                                },
+                                null
+                            )
+                        ]
+                    )
+                ]
+            );
+        }
+    }
+
+    class UlLarge extends React.Component {
+        render() {
+            return(
+                React.createElement(
+                    'ul',
+                    null,
+                    [
+                        React.createElement(
+                            Li,
+                            {
+                                img_url: '#none',
+                                img_src: './imgs/img11.png',
+                                txt_url: '#none',
+                                txt: 'Lorem ipsum dolor'
+                            },
+                            null
+                        ),
+                        React.createElement(
+                            Li,
+                            {
+                                img_url: '#none',
+                                img_src: './imgs/img12.png',
+                                txt_url: '#none',
+                                txt: 'Lorem ipsum dolor'
+                            },
+                            null
+                        ),
+                        React.createElement(
+                            Li,
+                            {
+                                img_url: '#none',
+                                img_src: './imgs/img13.png',
+                                txt_url: '#none',
+                                txt: 'Lorem ipsum dolor'
+                            },
+                            null
+                        )
+                    ]
+                )
+            )
+        }
+    }
+
+    class DivThums extends React.Component {
+        render() {
+            return([
+                React.createElement(
+                    'div', 
+                    {
+                        className: 'thumnails_01',
+                    },
+                    React.createElement(
+                        Ul,
+                        null,
+                        null
+                    )
+                )    
+                ,
+                React.createElement(
+                    'div', 
+                    {
+                        className: 'thumnails_02',
+                    },
+                    React.createElement(
+                        UlLarge,
+                        null,
+                        null
+                    )
+                )
+            ])
+        }
+    }
+
+    const el = <DivThums />
+    ReactDOM.render(el, document.getElementById('root'));
+
+</script>
